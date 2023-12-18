@@ -18,7 +18,7 @@ const Update = () => {
     const fetchAllBooks = async () => {
       try {
         const res = await axios.get(
-          "https://pizza-6a7y.onrender.com:8800/pizza/" + bookId
+          "https://pizza-6a7y.onrender.com/pizza/" + bookId
         );
         setBook(res.data[0]);
         setFile(res.data[0].photo);
@@ -47,7 +47,7 @@ const Update = () => {
 
     try {
       await axios.put(
-        "https://pizza-6a7y.onrender.com:8800/pizza/" + bookId,
+        "https://pizza-6a7y.onrender.com/pizza/" + bookId,
         formdata
       );
       navigate("/");
@@ -81,7 +81,7 @@ const Update = () => {
       />
       <img
         style={{ width: "100px" }}
-        src={"https://pizza-6a7y.onrender.com:8800/" + book.photo}
+        src={"https://pizza-6a7y.onrender.com/" + book.photo}
         alt="cover"
       />
       <input type="file" onChange={handleFile} name="photo" />

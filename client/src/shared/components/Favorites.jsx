@@ -11,7 +11,7 @@ const Favorites = ({ fav, closeFav, handleDeleteFav }) => {
           <div key={index} className={styles.items}>
             <div className={styles.photo}>
               <img
-                src={"https://pizza-6a7y.onrender.com:8800/" + item.photo}
+                src={"https://pizza-6a7y.onrender.com/" + item.photo}
                 alt="pizza"
               />
             </div>

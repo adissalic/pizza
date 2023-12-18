@@ -40,7 +40,7 @@ const Cart = ({ order, closeCart, handleDelete, orderNow }) => {
     let generatedDate = generateDate();
     const setOrdering = async () => {
       try {
-        await axios.post("https://pizza-6a7y.onrender.com:8800/customers", {
+        await axios.post("https://pizza-6a7y.onrender.com/customers", {
           order_id: form.current.order_id.value,
           user_name: form.current.user_name.value,
           user_email: form.current.user_email.value,
@@ -55,7 +55,7 @@ const Cart = ({ order, closeCart, handleDelete, orderNow }) => {
         });
 
         for (const item of order) {
-          await axios.post("https://pizza-6a7y.onrender.com:8800/ordering", {
+          await axios.post("https://pizza-6a7y.onrender.com/ordering", {
             order_id: form.current.order_id.value,
             pizza_name: item.name,
             pizza_size: item.size,
@@ -152,7 +152,7 @@ const Cart = ({ order, closeCart, handleDelete, orderNow }) => {
               <div key={index} className={styles.items}>
                 <div className={styles.photo}>
                   <img
-                    src={"https://pizza-6a7y.onrender.com:8800/" + item.photo}
+                    src={"https://pizza-6a7y.onrender.com/" + item.photo}
                     alt="pizza"
                   />
                 </div>

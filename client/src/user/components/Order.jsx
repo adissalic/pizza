@@ -12,7 +12,7 @@ const Order = () => {
     const fetchCustomersById = async () => {
       try {
         const res = await axios.get(
-          `https://pizza-6a7y.onrender.com:8800/customers/${id}`
+          `https://pizza-6a7y.onrender.com/customers/${id}`
         );
         setCustomers(res.data);
         console.log(res.data);
@@ -25,7 +25,7 @@ const Order = () => {
     const fetchOrdersById = async () => {
       try {
         const res = await axios.get(
-          `https://pizza-6a7y.onrender.com:8800/orders/${id}`
+          `https://pizza-6a7y.onrender.com/orders/${id}`
         );
         setPizza(res.data);
         console.log(res.data);
@@ -74,7 +74,7 @@ const Order = () => {
           <div key={index} className={styles.items}>
             <div className={styles.photo}>
               <img
-                src={"https://pizza-6a7y.onrender.com:8800/" + item.pizza_photo}
+                src={"https://pizza-6a7y.onrender.com/" + item.pizza_photo}
                 alt="pizza"
               />
             </div>
