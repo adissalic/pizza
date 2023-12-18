@@ -22,7 +22,7 @@ const Favorites = ({ fav, closeFav, handleDeleteFav }) => {
               <p className={styles.description}>{item.description}</p>
             </div>
             <div className={styles.check}>
-              <div className={styles.price}>{item.price} KM</div>
+              <div className={styles.price}>{item.price}€</div>
               <button
                 className={styles.quantity}
                 onClick={() => handleDeleteFav(index)}
