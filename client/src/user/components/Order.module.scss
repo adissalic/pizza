@@ -1,0 +1,208 @@
+.full {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .checkout {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+
+    .form {
+      margin-top: 50px;
+      margin-bottom: 30px;
+      width: 100%;
+
+      input {
+        font-weight: 100;
+        font-family: "Quicksand";
+        width: 70%;
+        margin: 5px;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 15px;
+        height: 40px;
+        text-align: center;
+        color: white;
+        @media only screen and (max-width: 500px) {
+          width: 90%;
+        }
+
+        &::placeholder {
+          color: white;
+          font-weight: 100;
+          font-family: "Quicksand";
+        }
+      }
+      label {
+        display: flex;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+      }
+      .order {
+        display: flex;
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 18px;
+
+        p {
+          color: #616161;
+          font-size: 14px;
+        }
+
+        .active {
+          color: #ffa000;
+          font-size: 18px;
+        }
+      }
+    }
+    select {
+      font-family: "Quicksand";
+      font-weight: 100;
+      width: 70%;
+      margin: 5px;
+      background: transparent;
+      border: 1px solid white;
+      border-radius: 15px;
+      height: 40px;
+      text-align: center;
+      color: white;
+    }
+    .buttons {
+      width: 70%;
+      display: flex;
+      margin: 50px auto 0;
+      gap: 5px;
+      .cta {
+        width: 100%;
+        margin: 5px;
+        padding: 0;
+        background: transparent;
+        border: 1px solid white;
+        border-radius: 15px;
+        height: 40px;
+        text-align: center;
+        color: white;
+        &:hover {
+          background-color: #9f310030;
+        }
+      }
+    }
+  }
+  .pizzas {
+    margin: 50px auto 20px;
+  }
+  .cart {
+    position: absolute;
+    padding: 50px 20px;
+    top: 5%;
+    right: 20%;
+    z-index: 999;
+    width: 55%;
+    height: 80%;
+    overflow: scroll;
+    backdrop-filter: blur(15px);
+    border: 1px solid silver;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    @media only screen and (max-width: 500px) {
+      width: 89%;
+      height: 88%;
+      top: auto;
+      right: auto;
+    }
+    .title {
+      padding-bottom: 20px;
+    }
+    .items {
+      display: flex;
+      width: 70%;
+      padding: 20px 0;
+      margin: 5px auto;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      justify-content: space-between;
+      align-items: center;
+      @media only screen and (max-width: 500px) {
+        width: auto;
+      }
+      .photo {
+        width: 20%;
+        img {
+          width: 100px;
+        }
+      }
+      .details {
+        width: 60%;
+        .size {
+          font-size: 15px;
+          padding: 10px 0;
+        }
+        .name {
+          font-size: 20px;
+        }
+        .description {
+          font-family: "Quicksand";
+          font-size: 11px;
+          width: 70%;
+          margin: auto;
+        }
+      }
+      .check {
+        width: 20%;
+        margin-right: 10px;
+        display: flex;
+        justify-content: space-between;
+        .price {
+          font-family: "Quicksand";
+        }
+        .quantity {
+          background: transparent;
+          border: none;
+          color: #898989;
+          font-weight: 100;
+          cursor: pointer;
+          position: relative; /* or absolute, depending on your layout */
+          z-index: 9999; /* Adjust the z-index as needed */
+        }
+      }
+    }
+  }
+  .cta {
+    font-family: "Quicksand";
+    text-transform: uppercase;
+    font-size: 15px;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 15px;
+    width: 30%;
+    height: 40px;
+    cursor: pointer;
+    margin: 5%;
+    &:hover {
+      background-color: #9f310030;
+    }
+  }
+  .close {
+    left: 25px;
+    top: 25px;
+    background: transparent;
+    border: none;
+    color: white;
+    position: absolute;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}

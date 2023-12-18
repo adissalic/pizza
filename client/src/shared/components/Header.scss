@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+.header {
+  color: $font-color;
+  width: 100%;
+  padding: 0;
+  height: 120px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 1200px){
+
+    width: 80%;
+    margin: auto;
+  }
+
+  .info {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .liked {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  img {
+    width: 25px;
+  }
+  .cart {
+    position: relative;
+    padding-right: 10px;
+    .items {
+      top: -5px;
+      right: 5px;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $cart-color;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+      p {
+        font-size: 11px;
+        font-weight: 900;
+      }
+    }
+    &:hover {
+      scale: 1.1;
+      cursor: pointer;
+    }
+  }
+}

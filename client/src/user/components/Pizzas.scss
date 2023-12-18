@@ -1,0 +1,298 @@
+@import "../../styles/variables.scss";
+.pizza {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  &-wrap {
+    font-family: "Quicksand", sans-serif;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    @media only screen and (max-width: 500px) {
+      margin-top: 100px;
+      flex-flow: column;
+    }
+
+    .pizza-info {
+      width: 33%;
+      display: flex;
+      flex-flow: column;
+      text-align: left;
+      text-transform: none;
+      @media only screen and (max-width: 500px) {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+      }
+      p {
+        font-size: 13px;
+        font-weight: 100;
+      }
+    }
+    .pizza-size {
+      width: 33%;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      z-index: 2;
+      @media only screen and (max-width: 500px) {
+        width: 100%;
+        margin: 25px 0 15px;
+      }
+      .sizes {
+        display: flex;
+        margin: 50px 0;
+        gap: 15px;
+        justify-content: center;
+        @media only screen and (max-width: 500px) {
+          margin: 20px auto 0;
+        }
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 40px;
+          height: 40px;
+          border: 1px solid $border-color;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+          &:hover {
+            border: 1px solid $font-color;
+            cursor: pointer;
+          }
+          h3 {
+            font-size: 25px;
+          }
+        }
+        .active {
+          border: 1px solid $font-color;
+        }
+      }
+    }
+    .pizza-price {
+      width: 33%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+      @media only screen and (max-width: 500px) {
+        width: 100%;
+        justify-content: center;
+        flex-flow: column;
+        margin-top: 15px;
+        gap: 30px;
+      }
+      .cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background-color: $cart-color;
+        box-shadow: $cart-shadow;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        &:hover {
+          cursor: pointer;
+          scale: 1.1;
+        }
+        img {
+          width: 20px;
+          height: auto;
+        }
+      }
+    }
+  }
+  &-extras {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    @media only screen and (max-width: 500px) {
+      margin-top: -70px;
+      width: 90%;
+    }
+    .favorites,
+    .toping {
+      color: $border-color;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      img {
+        width: 21px;
+      }
+      &:hover {
+        color: $cart-color;
+        cursor: pointer;
+        scale: 1.1;
+        rotate: 2deg;
+      }
+    }
+  }
+
+  &-type {
+    display: flex;
+    position: absolute;
+    left: -2%;
+    bottom: 37vw;
+    width: 62vw;
+    z-index: 1;
+    @media screen and (max-width: 1700px) {
+      bottom: 37vw;
+      left: -2%;
+    }
+    @media screen and (max-width: 500px) {
+      width: 116vw;
+      bottom: 76vw;
+      left: -8%;
+    }
+    @media only screen and (min-width: 500px) and (max-width: 1200px) {
+      width: 63vh;
+      bottom: 43vh;
+     left: 50%;
+    transform: translateX(-50%);
+    }
+
+    svg {
+      padding: 20px;
+      z-index: 1;
+      position: absolute;
+      transition: "transform 0.5s ease-in-out";
+      -webkit-transition: "transform 0.5s ease-in-out";
+      -moz-transition: "transform 0.5s ease-in-out";
+      -ms-transition: "transform 0.5s ease-in-out";
+      -o-transition: "transform 0.5s ease-in-out";
+      textPath:hover {
+        a {
+          fill: $cart-color;
+        }
+      }
+    }
+    a {
+      font-size: 2px;
+      fill: $fill;
+    }
+
+    .active {
+      fill: $font-color;
+    }
+  }
+  .arcs {
+    position: absolute;
+    width: 56vw;
+    height: 56vw;
+    bottom: 10vh;
+    right: 50%;
+    transform: translate(50%, 50%);
+    @media only screen and (max-width: 500px) {
+      width: 100vw;
+      height: 100vw;
+    }
+    @media only screen and (min-width: 500px) and (max-width: 1200px) {
+      width: 56vh;
+      height: 56vh;
+    }
+    .large,
+    .medium {
+      position: absolute;
+      display: inline-block;
+      border-radius: 50%;
+      margin: 10px auto 0;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .large {
+      border: 1px solid $fill;
+      width: 100%;
+      height: 100%;
+    }
+    .medium {
+      border: 1px solid $font-color;
+      width: 90%;
+      height: 90%;
+    }
+  }
+  &-photo {
+    bottom: 10vh;
+    right: 50%;
+    transform: translate(50%, 50%);
+    position: absolute;
+    .rotate {
+      transform: rotate(180deg);
+      transition: transform 4s ease-out;
+      -webkit-transition: transform 4s ease-out;
+      -moz-transition: transform 4s ease-out;
+      -ms-transition: transform 4s ease-out;
+      -o-transition: transform 4s ease-out;
+      -webkit-transform: rotate(180deg);
+      -moz-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+    }
+    .defrotate {
+      transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+      -moz-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      -o-transform: rotate(-180deg);
+    }
+
+    img {
+      width: 37vw;
+      @media screen and (max-width: 1700px) {
+        width: 42vw;
+      }
+      @media only screen and (max-width: 500px) {
+        width: 72vw;
+      }
+      @media only screen and (min-width: 500px) and (max-width: 1200px) {
+        width: 42vh;
+        height: 42vh;
+      }
+    }
+  }
+  .L,
+  .M,
+  .S {
+    transition: transform 1s;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s;
+    -ms-transition: transform 1s;
+    -o-transition: transform 1s;
+  }
+
+  .L {
+    transform: scale(1.15);
+    -webkit-transform: scale(1.15);
+    -moz-transform: scale(1.15);
+    -ms-transform: scale(1.15);
+    -o-transform: scale(1.15);
+  }
+  .M {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+  }
+
+  .S {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+  }
+}
