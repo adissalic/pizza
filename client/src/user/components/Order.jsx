@@ -11,7 +11,9 @@ const Order = () => {
   useEffect(() => {
     const fetchCustomersById = async () => {
       try {
-        const res = await axios.get(`http://localhost:8800/customers/${id}`);
+        const res = await axios.get(
+          `https://pizza-6a7y.onrender.com:8800/customers/${id}`
+        );
         setCustomers(res.data);
         console.log(res.data);
       } catch (err) {
@@ -22,7 +24,9 @@ const Order = () => {
 
     const fetchOrdersById = async () => {
       try {
-        const res = await axios.get(`http://localhost:8800/orders/${id}`);
+        const res = await axios.get(
+          `https://pizza-6a7y.onrender.com:8800/orders/${id}`
+        );
         setPizza(res.data);
         console.log(res.data);
       } catch (err) {
@@ -65,12 +69,12 @@ const Order = () => {
             </form>
           ))}
         </div>
-<p className={styles.pizzas}>Your pizzas</p>
+        <p className={styles.pizzas}>Your pizzas</p>
         {pizzas.map((item, index) => (
           <div key={index} className={styles.items}>
             <div className={styles.photo}>
               <img
-                src={"http://localhost:8800/" + item.pizza_photo}
+                src={"https://pizza-6a7y.onrender.com:8800/" + item.pizza_photo}
                 alt="pizza"
               />
             </div>

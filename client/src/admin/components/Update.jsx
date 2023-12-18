@@ -9,7 +9,7 @@ const Update = () => {
     name: "",
     description: "",
     price: null,
-    photo: ""
+    photo: "",
   });
   const location = useLocation();
   const bookId = location.pathname.split("/")[2];
@@ -17,9 +17,11 @@ const Update = () => {
   useEffect(() => {
     const fetchAllBooks = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/pizza/" + bookId);
+        const res = await axios.get(
+          "https://pizza-6a7y.onrender.com:8800/pizza/" + bookId
+        );
         setBook(res.data[0]);
-        setFile(res.data[0].photo)
+        setFile(res.data[0].photo);
       } catch (err) {
         console.log(err);
       }
@@ -32,7 +34,7 @@ const Update = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
-    console.log(book)
+    console.log(book);
   };
 
   const handleClick = async (e) => {
@@ -44,7 +46,10 @@ const Update = () => {
     formdata.append("photo", file);
 
     try {
-      await axios.put("http://localhost:8800/pizza/" + bookId, formdata);
+      await axios.put(
+        "https://pizza-6a7y.onrender.com:8800/pizza/" + bookId,
+        formdata
+      );
       navigate("/");
     } catch (err) {
       console.log(err);
@@ -76,7 +81,7 @@ const Update = () => {
       />
       <img
         style={{ width: "100px" }}
-        src={"http://localhost:8800/" + book.photo}
+        src={"https://pizza-6a7y.onrender.com:8800/" + book.photo}
         alt="cover"
       />
       <input type="file" onChange={handleFile} name="photo" />

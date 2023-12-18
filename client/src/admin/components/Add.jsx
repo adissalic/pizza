@@ -28,7 +28,7 @@ const Add = () => {
     formdata.append("photo", file);
 
     axios
-      .post("http://localhost:8800/add", formdata)
+      .post("https://pizza-6a7y.onrender.com:8800/add", formdata)
       .then((res) => {
         if (res.data.Status === "Success") {
           console.log("Succeded");

@@ -1,6 +1,5 @@
 import styles from "./Favorites.module.scss";
 const Favorites = ({ fav, closeFav, handleDeleteFav }) => {
-
   return (
     <div className={styles.full}>
       <div className={styles.cart}>
@@ -11,7 +10,10 @@ const Favorites = ({ fav, closeFav, handleDeleteFav }) => {
         {fav.map((item, index) => (
           <div key={index} className={styles.items}>
             <div className={styles.photo}>
-              <img src={"http://localhost:8800/" + item.photo} alt="pizza" />
+              <img
+                src={"https://pizza-6a7y.onrender.com:8800/" + item.photo}
+                alt="pizza"
+              />
             </div>
             <div className={styles.details}>
               <h3 className={styles.name}>{item.name}</h3>
@@ -21,7 +23,10 @@ const Favorites = ({ fav, closeFav, handleDeleteFav }) => {
             </div>
             <div className={styles.check}>
               <div className={styles.price}>{item.price} KM</div>
-              <button className={styles.quantity} onClick={() => handleDeleteFav(index)}>
+              <button
+                className={styles.quantity}
+                onClick={() => handleDeleteFav(index)}
+              >
                 X
               </button>
             </div>

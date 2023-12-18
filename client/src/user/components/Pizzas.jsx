@@ -34,7 +34,9 @@ const Pizzas = ({ order, setOrder, fav, setFav }) => {
   useEffect(() => {
     const fetchAllPizza = async () => {
       try {
-        const res = await axios.get("http://localhost:8800/pizza");
+        const res = await axios.get(
+          "https://pizza-6a7y.onrender.com:8800/pizza"
+        );
         setPizza(res.data);
         if (!pizzas.length > 0) {
           setActivePizza(res.data[0]);
@@ -221,7 +223,7 @@ const Pizzas = ({ order, setOrder, fav, setFav }) => {
           <img
             key={activePizza.photo + size}
             className={imageClass}
-            src={"http://localhost:8800/" + activePizza.photo}
+            src={"https://pizza-6a7y.onrender.com:8800/" + activePizza.photo}
             alt="Margherita"
           />
         </div>
